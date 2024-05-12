@@ -23,4 +23,4 @@
 ## Additional Resources
 
 - PowerPoint presentation: `presentation.pptm`
-- Contact: [team@email.com](mailto:abdulkhayevbilol@gmail.com)
+- Contact: [abdulkhayevbilol@gmail.com](mailto:abdulkhayevbilol@gmail.com)
