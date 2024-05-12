@@ -3,9 +3,17 @@
 ## Features
 
 - **Responsive Design**: Compatible with various device sizes.
-- **Search Functionality**: Search vehicles by color, body type, make year, and model. ![Search page](src/main/resources/other/search.png)
+- **Search Functionality**: Search vehicles by color, body type, make year, and model.
+<div style="text-align:center;">
+  <img src="src/main/resources/other/search.png" alt="Search page" style="width: 400px;" />
+</div>
+
 - **Database Integration**: Utilizes MongoDB for storage.
-- **Camera Handling**: Prepared for future QR code scanning integration. ![Scan page](src/main/resources/other/camera.png) 
+- **Camera Handling**: Prepared for future QR code scanning integration.
+<div style="text-align:center;">
+  <img src="src/main/resources/other/camera.png" alt="Scan page" style="width: 400px;" />
+</div>
+
 - **Automatic Parking Management**: Manages incoming and leaving vehicles efficiently.
 
 ## Installation
