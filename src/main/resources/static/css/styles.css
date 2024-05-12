@@ -1,0 +1,183 @@
+/* Common styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f5f9;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.container {
+    margin-top: 60px; /* Adjust based on header height */
+    margin-bottom: 60px; /* Adjust based on footer height */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #2980b9;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+select, button {
+    width: 15%; /* Set width to 100% for all form elements */
+    margin-bottom: 15px;
+    align-items:center;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #2980b9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2471a3;
+}
+
+.footer-link {
+    padding: 8px 12px;
+    margin: 2px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #2980b9;
+    text-decoration: none; /* Remove underline */
+    color: #fff;
+    border-color:#2980b9;
+}
+
+.footer-link:hover {
+    background-color: #ddd;
+}
+
+.car-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.car-attributes {
+     display: flex;
+       flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+       justify-content: center; /* Center items horizontally */
+       align-items: center;
+       background-color: #fff;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+       padding: 10px;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.car-attributes span {
+ padding: 8px 12px;
+    margin: 5px; /* Add some margin between spans */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    max-width: calc(50% - 20px); /* Set maximum width for spans */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    word-wrap: break-word; /* Allow words to break and wrap to the next line */
+    white-space: normal; /* Allow white space to wrap */
+    text-align: center; /* Center-align text within spans */
+}
+
+.car-attributes span:hover {
+    background-color: #afd1e8;
+}
+
+.car-info:hover .car-attributes {
+   background-color: #2c3e50;
+}
+
+.car-info:hover .car-attributes span:hover {
+    background-color: #afd1e8;
+}
+
+
+/* Responsive styles */
+@media only screen and (max-width: 1024px) {
+    form {
+        flex-direction: column;
+    }
+    select, button {
+          width: 100%;
+    }
+    .car-attributes span {
+            display: block; /* Change spans to block level elements */
+            margin-bottom: 5px; /* Add margin between spans */
+        }
+}
+@media only screen and (min-width: 1024px) {
+.car-attributes{
+  width:80%;
+}
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .car-info {
+        flex-direction: column; /* Change to column layout on tablets and phones */
+        align-items: flex-start; /* Align items to the start vertically */
+    }
+
+    .car-attributes span {
+        display: block; /* Change spans to block level elements */
+        margin-bottom: 5px; /* Add margin between spans */
+        max-width: calc(100% - 20px); /* Set maximum width to full width on mobile */
+
+    }
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+    select, button {
+        width: 80%;
+    }
+
+    label {
+        grid-column: span 1;
+    }
+}

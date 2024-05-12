@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UzAuto Service</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<header>
+    <h1>UzAuto Service</h1>
+</header>
+
+<div class="container">
+    <h2>Поиск Автомобилей:</h2>
+    <form id="searchForm" action="/search">
+        <label for="colorSelect">Окраска:</label>
+        <select id="colorSelect" name="color">
+            <!-- Add color options dynamically using JavaScript -->
+            <option value="...">*</option>
+            <option value="444">зеленый</option>
+            <option value="111">черный</option>
+            <option value="222">белый</option>
+            <option value="333">мокрый асфальт</option>
+        </select>
+        <label for="modelSelect">Модель:</label>
+        <select id="modelSelect" name="model">
+            <!-- Add model options dynamically using JavaScript -->
+            <option value="...">*</option>
+            <option value="111">Tahoe</option>
+            <option value="222">Traverse</option>
+            <option value="333">Equinox</option>
+            <option value="444">Captiva</option>
+            <option value="555">Tracker</option>
+            <option value="666">Malibu</option>
+            <option value="777">Onix</option>
+            <option value="888">Labo</option>
+            <option value="999">Gentra</option>
+            <option value="AAA">Cobalt</option>
+            <option value="BBB">Spark</option>
+        </select>
+        <label for="makeYearSelect">Год Выпуска:</label>
+        <select id="makeYearSelect" name="year">
+            <!-- Add make year options dynamically using JavaScript -->
+            <option value="...">*</option>
+            <!-- You can dynamically populate options from a range of years -->
+            <option value="002">2024</option>
+            <option value="001">2023</option>
+
+            <!-- Add more years as needed -->
+        </select>
+        <label for="bodyTypeSelect" >Тип Кузова:</label>
+        <select id="bodyTypeSelect" name="body">
+            <!-- Add body type options dynamically using JavaScript -->
+            <option value="..">*</option>
+            <option value="01">Седан</option>
+            <option value="02">Внедорожник</option>
+            <option value="03">Купе</option>
+            <!-- Add more body types as needed -->
+        </select>
+        <button type="submit"  class="button">Поиск</button>
+
+    </form>
+</div>
+<div class="container" id="search">
+    <div id="searchResults" class="search-results">
+        <div th:each="car : ${cars}" class="car-info">
+            <div class="car-attributes">
+                <span th:text="${T(com.sparksuccess.demo.ContentController.VinDialect).getModel(#strings.substring(car.VIN, 9, 12))}"></span>
+                <span th:text="${T(com.sparksuccess.demo.ContentController.VinDialect).getColor(#strings.substring(car.VIN, 4, 7))}"></span>
+                <span th:text="${T(com.sparksuccess.demo.ContentController.VinDialect).getBody(#strings.substring(car.VIN, 0, 2))}"></span>
+                <span th:text="${T(com.sparksuccess.demo.ContentController.VinDialect).getYear(#strings.substring(car.VIN, 14, 17))}"></span>
+                <span th:text="${'LOC:'+car.coordinates}"></span>
+                <span th:text="${'VIN:'+car.VIN}"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <br><a th:href="@{/scan}" class="footer-link">Сканировать</a>
+</footer>
+</body>
+</html>
